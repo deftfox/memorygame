@@ -4,10 +4,12 @@
     <div class="leaderboard__wrapper">
       <table class="leaderboard__table">
         <tr>
+          <th>Position</th>
           <th>Name</th>
           <th>Time</th>
         </tr>
-        <tr v-for="(player, index) in leaderboard" :key="index">
+        <tr v-for="(player, index) in this.$store.getters.playersOrderedByTimeAscending" :key="index">
+          <td>{{index + 1}}</td>
           <td>{{player.name}}</td>
           <td>{{player.time}}</td>
         </tr>        
